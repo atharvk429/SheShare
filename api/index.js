@@ -25,10 +25,12 @@ app.use('/uploads', express.static(__dirname + '/uploads'));
 //     credentials: true
 // }));
 
-app.use(cors({
-    origin: ['http://localhost:5173', 'https://main--sheshare0.netlify.app'],
-    credentials: true
-}));
+// app.use(cors({
+//     origin: ['http://localhost:5173', 'https://main--sheshare0.netlify.app'],
+//     credentials: true
+// }));
+
+app.use(cors());
 
 mongoose.connect(process.env.MONGO_URL);
 
