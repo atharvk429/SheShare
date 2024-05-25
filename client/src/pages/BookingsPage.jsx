@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import AccountNav from "./AccountNav";
 // import axios from "axios";
-import { differenceInCalendarDays, format } from "date-fns";
 import PlaceImg from "../PlaceImg";
 import { Link } from "react-router-dom";
 import BookingDates from "../BookingDates";

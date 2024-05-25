@@ -1,11 +1,11 @@
 import { Route, Routes } from 'react-router-dom'
-import {Link} from "react-router-dom";
+// import {Link} from "react-router-dom";
 import './App.css'
 import IndexPage from './pages/IndexPage'
 import LoginPage from './pages/LoginPage'
 import RegisterPage from './pages/RegisterPage';
 import Layout from './Layout'
-import axios from 'axios';
+// import axios from 'axios';
 import { UserContextProvider } from './UserContext';
 // import { useEffect } from 'react';
 import ProfilePage from './pages/ProfilePage';
@@ -15,8 +15,8 @@ import PlacePage from './pages/PlacePage';
 import BookingsPage from './pages/BookingsPage';
 import BookingPage from './pages/BookingPage';
 
-axios.defaults.baseURL = process.env.REACT_APP_API_URL || 'http://localhost:4000';
-axios.defaults.withCredentials = true;
+// axios.defaults.baseURL = process.env.REACT_APP_API_URL || 'http://localhost:4000';
+// axios.defaults.withCredentials = true;
 
 function App() {
   return (
