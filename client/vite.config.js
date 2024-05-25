@@ -7,4 +7,7 @@ export default defineConfig({
   build: {
     outDir: 'dist', // Make sure this is the directory you set in Netlify
   },
+  define: {
+    'process.env': process.env,
+  },
 })
