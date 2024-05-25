@@ -13,7 +13,7 @@ const fs = require('fs');
 require('dotenv').config();
 
 const app = express();
-
+    
 const bcryptSalt = bcrypt.genSaltSync(10);
 const jwtSecret = 'pleasedonttellanyone';
 
