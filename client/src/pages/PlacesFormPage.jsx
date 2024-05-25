@@ -3,7 +3,8 @@ import PhotosUploader from "../PhotosUploader";
 import Perks from "../Perks";
 import AccountNav from "./AccountNav";
 import { Navigate, useParams } from "react-router-dom";
-import axios from "axios";
+import apiClient from "../api";
+// import axios from "axios";
 
 export default function PlacesFormPage() {
     const {id} = useParams();
@@ -23,7 +24,7 @@ export default function PlacesFormPage() {
         if(!id) {
             return;
         }
-        axios.get('/places/'+id)
+        apiClient.get('/places/'+id)
             .then(response => {
                 const {data} = response;
                 setTitle(data.title);
@@ -68,13 +69,13 @@ export default function PlacesFormPage() {
             checkIn, checkOut, maxGuests, price
         }
         if(id) {
-            await axios.put('/places', {
+            await apiClient.put('/places', {
                 id, ...placeData
             });
             setRedirect(true);
         }
         else {
-            await axios.post('/places', placeData);
+            await apiClient.post('/places', placeData);
             setRedirect(true);
         }
     }

@@ -1,9 +1,10 @@
-import axios from "axios";
+// import axios from "axios";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import AddressLink from "../AddressLink";
 import PlaceGallery from "../PlaceGallery";
 import BookingDates from "../BookingDates";
+import apiClient from "../api";
 
 export default function BookingPage() {
     const {id} = useParams();
@@ -11,7 +12,7 @@ export default function BookingPage() {
     
     useEffect(() => {
         if(id) {
-            axios.get('/bookings').then(response => {
+            apiClient.get('/bookings').then(response => {
                 const foundBooking = response.data.find(({_id}) => _id === id);
                 if(foundBooking) {
                     setBooking(foundBooking);

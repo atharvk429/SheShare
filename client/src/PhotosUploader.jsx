@@ -1,4 +1,5 @@
-import axios from "axios";
+// import axios from "axios";
+import apiClient from './api';
 import { useState } from "react";
 
 export default function PhotosUploader({addedPhotos, onChange}) {
@@ -6,7 +7,7 @@ export default function PhotosUploader({addedPhotos, onChange}) {
 
     async function addPhotoByLink(event) {
         event.preventDefault();
-        const {data: filename} = await axios.post('/upload-by-link', {link: photoLink});
+        const {data: filename} = await apiClient.post('/upload-by-link', {link: photoLink});
         onChange(prev => {
             return [...prev, filename];
         });
@@ -19,7 +20,7 @@ export default function PhotosUploader({addedPhotos, onChange}) {
         for(let i=0; i<files.length; i++) {
             data.append('photos', files[i]);   
         }
-        axios.post('/upload', data, {
+        apiClient.post('/upload', data, {
             headers: {'Content-Type':'multipart/form-data'}
         }).then(response => {
             const {data: filenames} = response;

@@ -1,9 +1,10 @@
-import axios from "axios";
+// import axios from "axios";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom"
 import BookingWidget from "../BookingWidget";
 import PlaceGallery from "../PlaceGallery";
 import AddressLink from "../AddressLink";
+import apiClient from "../api";
 
 export default function PlacePage() {
     const {id} = useParams();
@@ -13,7 +14,7 @@ export default function PlacePage() {
         if(!id) {
             return;
         }
-        axios.get(`/places/${id}`).then(response => {
+        apiClient.get(`/places/${id}`).then(response => {
             setPlace(response.data);
         });
         // We can do as below also

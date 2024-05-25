@@ -1,11 +1,12 @@
 import { useEffect, useState } from "react";
-import axios from "axios";
+// import axios from "axios";
 import { Link } from "react-router-dom";
+import apiClient from "../api";
 
 export default function IndexPage () {
     const [places,setPlaces] = useState([]);
     useEffect(() => {
-        axios.get('/places').then(response => {
+        apiClient.get('/places').then(response => {
             setPlaces(response.data);
         });
     }, []);
