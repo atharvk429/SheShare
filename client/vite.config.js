@@ -6,6 +6,5 @@ export default defineConfig({
   plugins: [react()],
   build: {
     outDir: 'dist', // Make sure this is the directory you set in Netlify
-    assetsDir: 'assets', // Optional: Customize asset directory
   },
 })
