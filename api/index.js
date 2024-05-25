@@ -19,6 +19,7 @@ const jwtSecret = 'pleasedonttellanyone';
 
 app.use(express.json());
 app.use(cookieParser());
+app.use(cors());
 app.use('/uploads', express.static(__dirname + '/uploads'));
 // app.use(cors({
 //     origin: ['http://localhost:5173','https://main--sheshare0.netlify.app'],
@@ -29,8 +30,6 @@ app.use('/uploads', express.static(__dirname + '/uploads'));
 //     origin: ['http://localhost:5173', 'https://main--sheshare0.netlify.app'],
 //     credentials: true
 // }));
-
-app.use(cors());
 
 mongoose.connect(process.env.MONGO_URL);
 
